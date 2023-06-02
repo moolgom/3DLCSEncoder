@@ -6,7 +6,8 @@ from compressai.entropy_models import EntropyBottleneck, GaussianConditional
 
     
 ###############################################################################
-# Deep Implicit Volume Compression
+# Fully Factorized Prior Model
+# "Deep Implicit Volume Compression"
 # https://arxiv.org/abs/2005.08877
 ###############################################################################
 
@@ -66,6 +67,7 @@ class FactorizedPriorModel(nn.Module):
         return sign, magn
     
 
+# Zero-Mean Scale HyperPrior Model
 class ScaleHyperPriorModel(FactorizedPriorModel):
     def __init__(self, M=192, N=64):
         super().__init__()
@@ -106,6 +108,8 @@ class ScaleHyperPriorModel(FactorizedPriorModel):
         
         return sign, magn, y_likelihoods, z_likelihoods
         
+
+# Nonzero-Mean Scale HyperPrior Model
 class MeanScaleHyperPriorModel(FactorizedPriorModel):
     def __init__(self, M=192, N=64):
         super().__init__()
@@ -148,6 +152,7 @@ class MeanScaleHyperPriorModel(FactorizedPriorModel):
         return sign, magn, y_likelihoods, z_likelihoods
         
     
+# Zero-Mean Scale HyperPrior Model + Latent Code Selection
 class UniScaleHyperPriorModel(ScaleHyperPriorModel):
     def __init__(self, M=192, N=64):
         super().__init__()
@@ -183,6 +188,8 @@ class UniScaleHyperPriorModel(ScaleHyperPriorModel):
         
         return sign, magn, y_likelihoods, z_likelihoods, impts_mask
     
+
+# Nonzero-Mean Scale HyperPrior Model + Latent Code Selection
 class UniMeanScaleHyperPriorModel(MeanScaleHyperPriorModel):
     def __init__(self, M=192, N=64):
         super().__init__()
@@ -218,28 +225,3 @@ class UniMeanScaleHyperPriorModel(MeanScaleHyperPriorModel):
         magn = self.head_magn(x_hat).clamp(-1., 1.) # 크기 예측 
         
         return sign, magn, y_likelihoods, z_likelihoods, impts_mask
-        
-
-        
-    
-'''  
-##############################################################
-############################ TEST ############################
-##############################################################
-
-from TSDFVolumeDataset import TSDFVolumeDataset
-from torch.utils.data import DataLoader
-
-dataset = TSDFVolumeDataset()
-dataloader = DataLoader(dataset, batch_size=512, shuffle=False)
-tsdf, mask, sign, magn = next(iter(dataloader))
-
-model = BaselineModel()
-sign, magn, y_likelihoods = model(tsdf).
-
-
-model = UniScaleHyperPriorModel()
-sign, magn, y_likelihoods, z_likelihoods, impts_mask = model(tsdf)
-
-
-'''
