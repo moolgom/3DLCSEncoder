@@ -4,4 +4,6 @@ This repository implements [TSDF Volume Compression with Axis-wise Variable Reso
 
 # TODO
 
+[Completed] Upload source code and data related to compression models.
+
 Upload the first source code by June 2nd.
