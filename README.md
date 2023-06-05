@@ -1,6 +1,6 @@
 # 3D TSDF Volume Encoder
 
-![representative2023](representative2023.jpg)
+![representative2023](representative2023.jpeg)
 
 This repository implements [TSDF Volume Compression with Axis-wise Variable Resolution Representation and Selective Latent Code Encoding].
 
