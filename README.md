@@ -60,6 +60,8 @@ Draco QP=10 (7496.56 KB)
 
 Ours RP=8 (1238.13 KB, TSDF volume dimension: 544 x 352 x 864)
 
+***Even at a compression rate of x420 times, acceptable geometric quality is maintained.***
+
 <img src="./Images/lucy_ours_RP8.png" width="500" height="300">
 
 | QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
