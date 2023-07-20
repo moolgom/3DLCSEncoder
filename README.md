@@ -72,6 +72,8 @@ Draco QP=10 (3420.00 KB)
 Ours RP=8 (1762.87 KB, TSDF volume dimension: 544 x 864 x 480)
 
 <img src="./Images/thai_statuette_ours_RP8.png" width="500" height="300">
+
+(On the left side is the result of Draco, and on the right side is the result of our TSDF volume encoder.)
    
 | QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
 |----|----------|---------------|------------|----------|---------------|
