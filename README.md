@@ -13,39 +13,21 @@ This paper presents a novel approach for compressing truncated signed distance f
 
 
 # Encoder Performance
-<!--
-![](./Images/dragon.png =250x250) 
-![](./Images/dragon.png =250x250)
 
+## Dragon (http://graphics.stanford.edu/data/3Dscanrep/)   
 
-<table>
-<tr>
-<td>
-<img src="./Images/dragon.png" width="200" height="120">
-  Uncompressed
-</td>
-<td>
-<img src="./Images/dragon_draco_QP10.png" width="200" height="120">
-  Draco QP=10
-</td>
-<td>
-<img src="./Images/dragon_ours_RP8.png" width="200" height="120">
-  Ours RP=8
-</td>
-</tr>
-</table>
--->
-
-<img src="./Images/dragon.png" width="500" height="300">
 Uncompressed
 
-<img src="./Images/dragon_draco_QP10.png" width="500" height="300">
+<img src="./Images/dragon.png" width="500" height="300">
+
 Draco QP=10 (489.5342 KB)
 
-<img src="./Images/dragon_ours_RP8.png" width="500" height="300">
+<img src="./Images/dragon_draco_QP10.png" width="500" height="300">
+
 Ours RP=8 (470.9717 KB)
 
-Dragon (http://graphics.stanford.edu/data/3Dscanrep/)               
+<img src="./Images/dragon_ours_RP8.png" width="500" height="300">
+   
 | QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
 |----|----------|---------------|------------|----------|---------------|
 | 8  | 314.7529 | 0.000662      | 0          | 151.8047 | 0.000226      |
@@ -62,9 +44,20 @@ Dragon (http://graphics.stanford.edu/data/3Dscanrep/)
 |    |          |               | 11         | 3295.279 | 7.47E-05      |
 
 
+## Thai Statuette (http://graphics.stanford.edu/data/3Dscanrep/)   
 
+Uncompressed
 
-Thai Statuette (http://graphics.stanford.edu/data/3Dscanrep/)     
+<img src="./Images/thai_statuette.png" width="500" height="300">
+
+Draco QP=10 (3420.002 KB)
+
+<img src="./Images/thai_statuette_draco_QP10.png" width="500" height="300">
+
+Ours RP=8 (1762.874 KB)
+
+<img src="./Images/thai_statuette_ours_RP8.png" width="500" height="300">
+   
 | QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
 |----|----------|---------------|------------|----------|---------------|
 | 8  | 2107.906 | 1.128602      | 0          | 567.1553 | 0.220818      |
