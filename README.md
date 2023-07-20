@@ -16,7 +16,7 @@ This paper presents a novel approach for compressing truncated signed distance f
 <!--
 ![](./Images/dragon.png =250x250) 
 ![](./Images/dragon.png =250x250)
--->
+
 
 <table>
 <tr>
@@ -34,6 +34,16 @@ This paper presents a novel approach for compressing truncated signed distance f
 </td>
 </tr>
 </table>
+-->
+
+<img src="./Images/dragon.png" width="500" height="300">
+Uncompressed
+
+<img src="./Images/dragon_draco_QP10.png" width="500" height="300">
+Draco QP=10 (489.5342 KB)
+
+<img src="./Images/dragon_ours_RP8.png" width="500" height="300">
+Ours RP=8 (470.9717 KB)
 
 Dragon (http://graphics.stanford.edu/data/3Dscanrep/)               
 | QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
