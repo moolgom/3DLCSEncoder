@@ -13,6 +13,9 @@ This paper presents a novel approach for compressing truncated signed distance f
 
 # Our Evaluation Datasets
 
+Our evaluation dataset consists of 4K RGB-D images acquired using a 21 x 21 frontal-facing camera array in virtual indoor scenes. 
+Once we find a hosting solution, these datasets will be made available for public access.
+
 ## Hotel Near
 
 3.904 x 2.816 x 0.768 meters
