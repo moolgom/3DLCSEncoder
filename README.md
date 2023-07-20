@@ -13,9 +13,35 @@ This paper presents a novel approach for compressing truncated signed distance f
 
 
 # Encoder Performance
-
+<!--
 ![](./Images/dragon.png =250x250) 
 ![](./Images/dragon.png =250x250)
+-->
+
+<table>
+<tr>
+<td>
+<img src="./Images/dragon.png" width="200" height="120">
+  Uncompressed
+</td>
+<td>
+<img src="./Images/dragon_draco_QP10.png" width="200" height="120">
+  Draco QP=10
+</td>
+<td>
+<img src="./Images/dragon_draco_QP10_Quality.png" width="200" height="120">
+  Draco QP=10 (Distortion)
+</td>
+<td>
+<img src="./Images/dragon_ours_RP8.png" width="200" height="120">
+  Ours RP=8
+</td>
+<td>
+<img src="./Images/dragon_ours_RP8_Quality.png" width="200" height="120">
+  Ours RP=8 (Distortion)
+</td>
+</tr>
+</table>
 
 Dragon (http://graphics.stanford.edu/data/3Dscanrep/)               
 | QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
