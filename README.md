@@ -15,6 +15,7 @@ This paper presents a novel approach for compressing truncated signed distance f
 
 Our evaluation dataset consists of 4K RGB-D images acquired using a 21 x 21 frontal-facing camera array in virtual indoor scenes. 
 Once we find a hosting solution, these datasets will be made available for public access.
+The linked ply files for each scene are 3D meshes created through TSDF fusion.
 
 ## Hotel Near
 
@@ -28,11 +29,15 @@ Once we find a hosting solution, these datasets will be made available for publi
 
 6.208 x 3.584 x 3.52 meters
 
+[Hotel-Far.ply](https://drive.google.com/file/d/1xLIs8EeL2JSFiT_lNng3YIcnIM09dNGD/view?usp=sharing)
+
 <img src="./Images/Hotel-Far.png" width="500" height="300">
 
 ## Restaurant Near
 
 5.504 x 3.328 x 1.408 meters
+
+[Restr-Near.ply](https://drive.google.com/file/d/17ldMha9JBSUaD29q1RMIOJ6XD1B6tSr5/view?usp=sharing)
 
 <img src="./Images/Restr-Near.png" width="500" height="300">
 
@@ -41,6 +46,8 @@ Once we find a hosting solution, these datasets will be made available for publi
 <img src="./Images/Restr-Far.png" width="500" height="300">
 
 7.872 x 3.648 x 4.928 meters
+
+[Restr-Far.ply](https://drive.google.com/file/d/1ZY6k61YzDYsyUlgMUTt6-l2eCdh-u3iH/view?usp=sharing)
 
 # Our TSDF Volume Encoder Performance (with Single Res. TSDF Volume)
 
