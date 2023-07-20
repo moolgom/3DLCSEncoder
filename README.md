@@ -16,15 +16,15 @@ This paper presents a novel approach for compressing truncated signed distance f
 
 ## Dragon (http://graphics.stanford.edu/data/3Dscanrep/)   
 
-Uncompressed
+Uncompressed (33.2 MB)
 
 <img src="./Images/dragon.png" width="500" height="300">
 
-Draco QP=10 (489.5342 KB)
+Draco QP=10 (489.53 KB)
 
 <img src="./Images/dragon_draco_QP10.png" width="500" height="300">
 
-Ours RP=8 (470.9717 KB)
+Ours RP=8 (470.97 KB)
 
 <img src="./Images/dragon_ours_RP8.png" width="500" height="300">
    
@@ -46,15 +46,15 @@ Ours RP=8 (470.9717 KB)
 
 ## Thai Statuette (http://graphics.stanford.edu/data/3Dscanrep/)   
 
-Uncompressed
+Uncompressed (181 MB)
 
 <img src="./Images/thai_statuette.png" width="500" height="300">
 
-Draco QP=10 (3420.002 KB)
+Draco QP=10 (3420.00 KB)
 
 <img src="./Images/thai_statuette_draco_QP10.png" width="500" height="300">
 
-Ours RP=8 (1762.874 KB)
+Ours RP=8 (1762.87 KB)
 
 <img src="./Images/thai_statuette_ours_RP8.png" width="500" height="300">
    
@@ -72,4 +72,18 @@ Ours RP=8 (1762.874 KB)
 |    |          |               | 9          | 3519.432 | 8.86E-02      |
 |    |          |               | 10         | 7194.209 | 8.78E-02      |
 |    |          |               | 11         | 12655.88 | 8.50E-02      |
+
+## Lucy (http://graphics.stanford.edu/data/3Dscanrep/)   
+
+Uncompressed (508 MB)
+
+<img src="./Images/lucy.png" width="500" height="300">
+
+Draco QP=10 (7496.56 KB)
+
+<img src="./Images/lucy_draco_QP10.png" width="500" height="300">
+
+Ours RP=8 (1238.13 KB)
+
+<img src="./Images/lucy_ours_RP8.png" width="500" height="300">
 
