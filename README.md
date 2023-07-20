@@ -45,11 +45,12 @@ The linked ply files for each scene are 3D meshes created through TSDF fusion.
 
 ## Restaurant Far
 
-<img src="./Images/Restr-Far.png" width="500" height="300">
-
 7.872 x 3.648 x 4.928 meters
 
 [Restr-Far.ply](https://drive.google.com/file/d/1ZY6k61YzDYsyUlgMUTt6-l2eCdh-u3iH/view?usp=sharing)
+
+<img src="./Images/Restr-Far.png" width="500" height="300">
+
 
 # Our TSDF Volume Encoder Performance (with Single Res. TSDF Volume)
 
