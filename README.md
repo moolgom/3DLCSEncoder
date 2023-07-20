@@ -12,7 +12,7 @@ This repository implements [TSDF Volume Compression with Axis-wise Variable Reso
 This paper presents a novel approach for compressing truncated signed distance function (TSDF) volumes, leveraging two key contributions: an axis-wise variable resolution representation and a latent code selection-based compression model. The axis-wise variable resolution representation adapts the resolution along each axis based on local geometric complexity, effectively reducing the data size while preserving intricate geometric details. The proposed compression model employs optimal latent code selection, leading to improved compression efficiency and reduced computational complexity. The combination of these contributions results in a synergistic effect, enabling enhanced compression efficiency and preservation of geometric details in high-resolution TSDF volumes. 
 
 
-# Our TSDF Volume Encoder Performance
+# Our TSDF Volume Encoder Performance (with Single Res. TSDF Volume)
 
 Below are comparisons of the compression results using 3D models from the Stanford 3D Scanning Repository (http://graphics.stanford.edu/data/3Dscanrep/) with Google Draco (https://github.com/google/draco) and our TSDF volume encoder.
 In this experiment, for TSDF volume compression, we converted the mesh into a TSDF volume using Open3D (http://www.open3d.org/).
@@ -107,3 +107,5 @@ Ours RP=8 (470.97 KB, TSDF volume dimension: 512 x 384 x 228)
 |    |          |               | 9          | 1020.904 | 7.79E-05      |
 |    |          |               | 10         | 1969.086 | 7.78E-05      |
 |    |          |               | 11         | 3295.279 | 7.47E-05      |
+
+# Our TSDF Volume Encoder Performance (with Axis-wise Mult. Res. TSDF Volume)
