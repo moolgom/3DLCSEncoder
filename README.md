@@ -14,6 +14,9 @@ This paper presents a novel approach for compressing truncated signed distance f
 
 # Encoder Performance
 
+Below are comparisons of the compression results using 3D models from The Stanford 3D Scanning Repository (http://graphics.stanford.edu/data/3Dscanrep/) with Google Draco and our TSDF Volume encoder.
+In this experiment, for TSDF volume compression, we converted the mesh into a TSDF volume using Open3D.
+
 ## Dragon (http://graphics.stanford.edu/data/3Dscanrep/)   
 
 Uncompressed (33.2 MB)
@@ -24,7 +27,7 @@ Draco QP=10 (489.53 KB)
 
 <img src="./Images/dragon_draco_QP10.png" width="500" height="300">
 
-Ours RP=8 (470.97 KB)
+Ours RP=8 (470.97 KB, TSDF volume dimension: 512 x 384 x 228)
 
 <img src="./Images/dragon_ours_RP8.png" width="500" height="300">
    
@@ -54,7 +57,7 @@ Draco QP=10 (3420.00 KB)
 
 <img src="./Images/thai_statuette_draco_QP10.png" width="500" height="300">
 
-Ours RP=8 (1762.87 KB)
+Ours RP=8 (1762.87 KB, TSDF volume dimension: 544 x 864 x 480)
 
 <img src="./Images/thai_statuette_ours_RP8.png" width="500" height="300">
    
@@ -83,7 +86,7 @@ Draco QP=10 (7496.56 KB)
 
 <img src="./Images/lucy_draco_QP10.png" width="500" height="300">
 
-Ours RP=8 (1238.13 KB)
+Ours RP=8 (1238.13 KB, TSDF volume dimension: 544 x 352 x 864)
 
 <img src="./Images/lucy_ours_RP8.png" width="500" height="300">
 
