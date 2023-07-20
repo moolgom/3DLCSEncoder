@@ -21,15 +21,15 @@ This paper presents a novel approach for compressing truncated signed distance f
 <table>
 <tr>
 <td>
-<img src="./Images/dragon.png" width="300" height="180">
+<img src="./Images/dragon.png" width="200" height="120">
   Uncompressed
 </td>
 <td>
-<img src="./Images/dragon_draco_QP10.png" width="300" height="180">
+<img src="./Images/dragon_draco_QP10.png" width="200" height="120">
   Draco QP=10
 </td>
 <td>
-<img src="./Images/dragon_ours_RP8.png" width="300" height="180">
+<img src="./Images/dragon_ours_RP8.png" width="200" height="120">
   Ours RP=8
 </td>
 </tr>
