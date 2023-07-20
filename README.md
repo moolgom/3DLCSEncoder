@@ -13,6 +13,27 @@ This paper presents a novel approach for compressing truncated signed distance f
 
 
 # Encoder Performance
+<!--
+![](./Images/dragon.png =250x250) 
+![](./Images/dragon.png =250x250)
+-->
+
+<table>
+<tr>
+<td>
+<img src="./Images/dragon.png" width="300" height="180">
+  Uncompressed
+</td>
+<td>
+<img src="./Images/dragon_draco_QP10.png" width="300" height="180">
+  Draco QP=10
+</td>
+<td>
+<img src="./Images/dragon_ours_RP8.png" width="300" height="180">
+  Ours RP=8
+</td>
+</tr>
+</table>
 
 Dragon (http://graphics.stanford.edu/data/3Dscanrep/)               
 | QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
@@ -29,4 +50,23 @@ Dragon (http://graphics.stanford.edu/data/3Dscanrep/)
 |    |          |               | 9          | 1020.904 | 7.79E-05      |
 |    |          |               | 10         | 1969.086 | 7.78E-05      |
 |    |          |               | 11         | 3295.279 | 7.47E-05      |
+
+
+
+
+Thai Statuette (http://graphics.stanford.edu/data/3Dscanrep/)     
+| QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
+|----|----------|---------------|------------|----------|---------------|
+| 8  | 2107.906 | 1.128602      | 0          | 567.1553 | 0.220818      |
+| 9  | 2644.877 | 0.586638      | 1          | 581.7754 | 0.213324      |
+| 10 | 3420.002 | 0.315989      | 2          | 589.6455 | 0.201068      |
+| 11 | 4298.582 | 1.74E-01      | 3          | 604.791  | 0.187856      |
+| 12 | 4968.762 | 9.25E-02      | 4          | 656.043  | 0.1668        |
+| 13 | 6311.539 | 4.64E-02      | 5          | 752.0625 | 0.146347      |
+| 14 | 7942.594 | 2.32E-02      | 6          | 867.2246 | 0.125319      |
+| 15 | 9585.34  | 1.16E-02      | 7          | 1473.012 | 0.124741      |
+|    |          |               | 8          | 1762.874 | 8.97E-02      |
+|    |          |               | 9          | 3519.432 | 8.86E-02      |
+|    |          |               | 10         | 7194.209 | 8.78E-02      |
+|    |          |               | 11         | 12655.88 | 8.50E-02      |
 
