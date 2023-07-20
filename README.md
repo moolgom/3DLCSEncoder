@@ -19,6 +19,7 @@ Once we find a hosting solution, these datasets will be made available for publi
 ## Hotel Near
 
 3.904 x 2.816 x 0.768 meters 
+
 [Hotel-Near.ply](https://drive.google.com/file/d/1-mFjmX7QNxwACvzzr-RxRFNxbT7rQ3r3/view?usp=sharing)
 
 <img src="./Images/Hotel-Near.png" width="500" height="300">
