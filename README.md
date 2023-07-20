@@ -14,6 +14,8 @@ This paper presents a novel approach for compressing truncated signed distance f
 
 # Encoder Performance
 
+![](./Images/dragon.png =250x250) ![](./Images/dragon.png =250x250)
+
 Dragon (http://graphics.stanford.edu/data/3Dscanrep/)               
 | QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
 |----|----------|---------------|------------|----------|---------------|
