@@ -19,36 +19,6 @@ In this experiment, for TSDF volume compression, we converted the mesh into a TS
 Due to the loss of detail during the TSDF volume conversion process, we don't get good results at high bitrates. 
 However, it shows very good compression efficiency at low bitrates compared to Draco's mesh compression.
 
-## Dragon (http://graphics.stanford.edu/data/3Dscanrep/)   
-
-Uncompressed (33.2 MB)
-
-<img src="./Images/dragon.png" width="500" height="300">
-
-Draco QP=10 (489.53 KB)
-
-<img src="./Images/dragon_draco_QP10.png" width="500" height="300">
-
-Ours RP=8 (470.97 KB, TSDF volume dimension: 512 x 384 x 228)
-
-<img src="./Images/dragon_ours_RP8.png" width="500" height="300">
-   
-| QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
-|----|----------|---------------|------------|----------|---------------|
-| 8  | 314.7529 | 0.000662      | 0          | 151.8047 | 0.000226      |
-| 9  | 388.373  | 0.00037       | 1          | 154.5332 | 0.000216      |
-| 10 | 489.5342 | 0.000189      | 2          | 155.8838 | 0.000199      |
-| 11 | 607.5693 | 9.47E-05      | 3          | 160.9619 | 0.000184      |
-| 12 | 702.7988 | 4.68E-05      | 4          | 172.5967 | 0.000159      |
-| 13 | 824.1943 | 2.43E-05      | 5          | 200.4932 | 0.000135      |
-| 14 | 944.4453 | 1.21E-05      | 6          | 233.582  | 0.000125      |
-| 15 | 1059.284 | 5.96E-06      | 7          | 394.9395 | 0.000115      |
-|    |          |               | 8          | 470.9717 | 8.24E-05      |
-|    |          |               | 9          | 1020.904 | 7.79E-05      |
-|    |          |               | 10         | 1969.086 | 7.78E-05      |
-|    |          |               | 11         | 3295.279 | 7.47E-05      |
-
-
 ## Thai Statuette (http://graphics.stanford.edu/data/3Dscanrep/)   
 
 Uncompressed (181 MB)
@@ -106,3 +76,32 @@ Ours RP=8 (1238.13 KB, TSDF volume dimension: 544 x 352 x 864)
 |    |          |               | 9          | 2562.738 | 3.13E-01      |
 |    |          |               | 10         | 5209.644 | 3.14E-01      |
 |    |          |               | 11         | 9079.151 | 3.00E-01      |
+
+## Dragon (http://graphics.stanford.edu/data/3Dscanrep/)   
+
+Uncompressed (33.2 MB)
+
+<img src="./Images/dragon.png" width="500" height="300">
+
+Draco QP=10 (489.53 KB)
+
+<img src="./Images/dragon_draco_QP10.png" width="500" height="300">
+
+Ours RP=8 (470.97 KB, TSDF volume dimension: 512 x 384 x 228)
+
+<img src="./Images/dragon_ours_RP8.png" width="500" height="300">
+   
+| QP | KB       | Chamfer Dist. | Rate Point | KB       | Chamfer Dist. |
+|----|----------|---------------|------------|----------|---------------|
+| 8  | 314.7529 | 0.000662      | 0          | 151.8047 | 0.000226      |
+| 9  | 388.373  | 0.00037       | 1          | 154.5332 | 0.000216      |
+| 10 | 489.5342 | 0.000189      | 2          | 155.8838 | 0.000199      |
+| 11 | 607.5693 | 9.47E-05      | 3          | 160.9619 | 0.000184      |
+| 12 | 702.7988 | 4.68E-05      | 4          | 172.5967 | 0.000159      |
+| 13 | 824.1943 | 2.43E-05      | 5          | 200.4932 | 0.000135      |
+| 14 | 944.4453 | 1.21E-05      | 6          | 233.582  | 0.000125      |
+| 15 | 1059.284 | 5.96E-06      | 7          | 394.9395 | 0.000115      |
+|    |          |               | 8          | 470.9717 | 8.24E-05      |
+|    |          |               | 9          | 1020.904 | 7.79E-05      |
+|    |          |               | 10         | 1969.086 | 7.78E-05      |
+|    |          |               | 11         | 3295.279 | 7.47E-05      |
