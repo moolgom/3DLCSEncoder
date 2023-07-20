@@ -16,6 +16,8 @@ This paper presents a novel approach for compressing truncated signed distance f
 
 Below are comparisons of the compression results using 3D models from The Stanford 3D Scanning Repository (http://graphics.stanford.edu/data/3Dscanrep/) with Google Draco and our TSDF Volume encoder.
 In this experiment, for TSDF volume compression, we converted the mesh into a TSDF volume using Open3D.
+Due to the loss of detail during the TSDF volume conversion process, we don't get good results at high bitrates. 
+However, it shows very good compression efficiency at low bitrates compared to Draco's mesh compression.
 
 ## Dragon (http://graphics.stanford.edu/data/3Dscanrep/)   
 
