@@ -51,10 +51,6 @@ The linked ply files for each scene are 3D meshes created through TSDF fusion.
 
 <img src="./Images/Restr-Far.png" width="500" height="300">
 
-# Axiw-wise Variable Resolution Representation
-
-To Be Updated.
-
 # Compression Pipeline
 
 <img src="./Images/pipeline.png" width="800">
@@ -161,3 +157,29 @@ Ours RP=8 (470.97 KB, TSDF volume dimension: 512 x 384 x 228)
 |    |          |               | 11         | 3295.279 | 7.47E-05      |
 
 # Our TSDF Volume Encoder Performance (with Axis-wise Mult. Res. TSDF Volume)
+
+To Be Updated.
+
+# Axiw-wise Variable Resolution Representation
+
+The results below show the data size and distortion compared to the original geometry of meshes created using single-resolution and axis-variable resolution TSDF volume representations.
+
+## Single Resolution TSDF Volume
+
+<img src="./Images/ref_single_thai_shading.png" width="500" height="300">
+<img src="./Images/ref_single_thai_quality.png" width="500" height="300">
+
+8520 KB (PLY size), 0.053485 RMS (Hausdorff dist.) 
+
+## Axiw-wise Variable Resolution TSDF Volume
+
+<img src="./Images/ref_axis_thai_shading.png" width="500" height="300">
+<img src="./Images/ref_axis_thai_quality.png" width="500" height="300">
+
+7636 KB (PLY size), 0.046593 RMS (Hausdorff dist.) 
+
+To Be Updated.
+
+
+
+
