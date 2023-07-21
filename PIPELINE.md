@@ -1,3 +1,4 @@
+# Encoding pipeline
 
 <img src="./Images/pipeline_enc1.PNG" width="820" height="480">
 
