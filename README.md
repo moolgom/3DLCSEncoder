@@ -16,9 +16,6 @@ This paper presents a novel approach for compressing truncated signed distance f
 Our evaluation dataset consists of 4K RGB-D images acquired using a 21 x 21 frontal-facing camera array in virtual indoor scenes. 
 Once we find a hosting solution, these datasets will be made available for public access.
 
-# Compression Pipeline
-
-[Encoding pipeline]('./PIPELINE.md')
 
 The linked ply files for each scene are 3D meshes created through TSDF fusion.
 
@@ -54,6 +51,10 @@ The linked ply files for each scene are 3D meshes created through TSDF fusion.
 
 <img src="./Images/Restr-Far.png" width="500" height="300">
 
+
+# Compression Pipeline
+
+[Encoding pipeline]('./PIPELINE.md')
 
 # Our TSDF Volume Encoder Performance (with Single Res. TSDF Volume)
 
