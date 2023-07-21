@@ -54,7 +54,7 @@ The linked ply files for each scene are 3D meshes created through TSDF fusion.
 
 # Compression Pipeline
 
-[Encoding pipeline]('./PIPELINE.md')
+[Encoding pipeline](https://github.com/moolgom/3DLCSEncoder/blob/main/PIPELINE.md)
 
 # Our TSDF Volume Encoder Performance (with Single Res. TSDF Volume)
 
