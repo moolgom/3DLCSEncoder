@@ -51,6 +51,9 @@ The linked ply files for each scene are 3D meshes created through TSDF fusion.
 
 <img src="./Images/Restr-Far.png" width="500" height="300">
 
+# Axiw-wise Variable Resolution Representation
+
+To Be Updated.
 
 # Compression Pipeline
 
