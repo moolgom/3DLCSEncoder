@@ -158,6 +158,7 @@ Ours RP=8 (470.97 KB, TSDF volume dimension: 512 x 384 x 228)
 
 # Our TSDF Volume Encoder Performance (with Axis-wise Mult. Res. TSDF Volume)
 
+To Be Updated.
 
 # Axiw-wise Variable Resolution Representation
 
