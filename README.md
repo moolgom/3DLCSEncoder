@@ -7,6 +7,8 @@ This repository implements [TSDF Volume Compression with Axis-wise Variable Reso
 <span style="color: red;">(Due to intellectual property issues related to this research, all code will be released upon the official publication of the paper.)</span>
 
 
+
+
 # Abstract
 
 This paper introduces a new method for compressing truncated signed distance function (TSDF) volumes. Our approach involves two main contributions: axis-wise variable resolution representation (AWVR) and hyperprior-based compression model with latent code selection (HyperLCS). AWVR allows us to adjust the resolution of TSDF volume along each axis based on local geometric complexity. By using axis-wise variable resolutions, we can reduce the data size while still preserving intricate geometric details. HyperLCS enhances compression performance by selectively encoding the essential latent codes from a rate-distortion perspective. By considering the geometric complexity in the latent code selection, we can achieve better coding efficiency and reduce encoding/decoding time complexity.
