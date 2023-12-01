@@ -89,7 +89,7 @@ def create_topology_mask(tsdf_volume):
             for z in range(0, N-1):
                 current_cube = sign_volume[x:x+2, y:y+2, z:z+2]
                 if current_cube.sum() != 8 and current_cube.sum() != 0:
-                    mask_cube[x:x+1, y:y+1, z:z+1] = 1
+                    mask_cube[x:x+2, y:y+2, z:z+2] = 1
                 
     return mask_x, mask_y, mask_z, mask_cube
                     
@@ -504,8 +504,8 @@ def Test_HyperLCS(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origi
     
     # Use marching cubes to obtain the surface mesh 
     verts_out, faces_out, normals_out, values_out = measure.marching_cubes(tsdf_volume_out, 0, mask=mask_volume)
-    verts_out, faces_out, normals_out, values_out = measure.marching_cubes(tsdf_volume_out, 0)
-    #verts_out = verts_out * voxel_size + volume_origin
+    #verts_out, faces_out, normals_out, values_out = measure.marching_cubes(tsdf_volume_out, 0)
+    verts_out = verts_out * voxel_size + volume_origin
     faces_out = np.flip(faces_out, axis=1)
     mesh_out = trimesh.Trimesh(vertices=verts_out, faces=faces_out, vertex_normals=normals_out)
     _ = mesh_out.export('%s_HyperLCS_%d.ply' % (input_mesh, rate_point))
