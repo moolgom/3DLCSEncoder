@@ -14,7 +14,7 @@ Overall, the combination of these contributions produces a synergistic effect. I
 
 # Requirements
 
-trimesh, matplotlib, scikit-image,
+trimesh, matplotlib, scikit-image, scikit-learn
 
 # Our Evaluation Datasets
 
