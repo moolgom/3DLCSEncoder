@@ -153,7 +153,7 @@ class MeanScaleHyperPriorModel(FactorizedPriorModel):
         
     
 # Zero-Mean Scale HyperPrior Model + Latent Code Selection
-class UniScaleHyperPriorModel(ScaleHyperPriorModel):
+class HyperLCS(ScaleHyperPriorModel):
     def __init__(self, M=192, N=64):
         super().__init__()
     
@@ -190,7 +190,7 @@ class UniScaleHyperPriorModel(ScaleHyperPriorModel):
     
 
 # Nonzero-Mean Scale HyperPrior Model + Latent Code Selection
-class UniMeanScaleHyperPriorModel(MeanScaleHyperPriorModel):
+class HyperLCSMean(MeanScaleHyperPriorModel):
     def __init__(self, M=192, N=64):
         super().__init__()
     

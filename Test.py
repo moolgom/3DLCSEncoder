@@ -15,11 +15,11 @@ from VolumeDataset import TSDFVolumeDataset
     
 
 MODEL_NAMES = [
-    'FactorizedPriorModel',         # Fully Factorized Prior Model
-    'ScaleHyperPriorModel',         # Zero-Mean Scale HyperPrior Model
-    'MeanScaleHyperPriorModel',     # Nonzero-Mean Scale HyperPrior Model
-    'UniScaleHyperPriorModel',      # Zero-Mean Scale HyperPrior Model + Latent Code Selection
-    'UniMeanScaleHyperPriorModel',  # Nonzero-Mean Scale HyperPrior Model + Latent Code Selection
+    #'FactorizedPriorModel',         # Fully Factorized Prior Model
+    #'ScaleHyperPriorModel',         # Zero-Mean Scale HyperPrior Model
+    #'MeanScaleHyperPriorModel',     # Nonzero-Mean Scale HyperPrior Model
+    'HyperLCS',                     # Zero-Mean Scale HyperPrior Model + Latent Code Selection
+    'HyperLCSMean',                 # Nonzero-Mean Scale HyperPrior Model + Latent Code Selection
 ]
 
 
@@ -39,7 +39,7 @@ M = 192
 N = 64
 
 for model_name in MODEL_NAMES:
-    for RD_point in range(0, 12):
+    for RD_point in range(0, 1):
         
         tsdf, mask, sign, magn = next(iter(test_dataloader))
         tsdf = tsdf.cuda()
@@ -137,11 +137,11 @@ for model_name in MODEL_NAMES:
                 # Final Output
                 tsdf_dec = (sign_dec * 2.0 - 1.0) * torch.abs(magn_dec.cpu())
             
-        elif model_name == 'UniScaleHyperPriorModel':
+        elif model_name == 'HyperLCS':
             with torch.no_grad():
-                model = UniScaleHyperPriorModel(M, N).to('cuda')
+                model = HyperLCS(M, N).to('cuda')
                 model.load_state_dict(torch.load('./TrainedModels/%s/M%d_N%d_R%d.pth' % (model_name, M, N, RD_point),
-                                             map_location=torch.device('cuda')), strict=True) # 구글 기학습 모델을 사용
+                                             map_location=torch.device('cuda')), strict=True)
                 model.entropy_bottleneck.update()
                 model.gaussian_conditional.update_scale_table(scale_table)
                 model.eval()
@@ -203,11 +203,11 @@ for model_name in MODEL_NAMES:
                 # Final Output
                 tsdf_dec = (sign_dec * 2.0 - 1.0) * torch.abs(magn_dec.cpu())
                 
-        elif model_name == 'MeanScaleHyperPriorModel':
+        elif model_name == 'HyperLCSMean':
             with torch.no_grad():
-                model = MeanScaleHyperPriorModel(M, N).to('cuda')
+                model = HyperLCSMean(M, N).to('cuda')
                 model.load_state_dict(torch.load('./TrainedModels/%s/M%d_N%d_R%d.pth' % (model_name, M, N, RD_point),
-                                             map_location=torch.device('cuda')), strict=True) # 구글 기학습 모델을 사용
+                                             map_location=torch.device('cuda')), strict=True) 
                 model.entropy_bottleneck.update()
                 model.gaussian_conditional.update_scale_table(scale_table)
                 model.eval()
@@ -258,7 +258,7 @@ for model_name in MODEL_NAMES:
             with torch.no_grad():
                 model = UniMeanScaleHyperPriorModel(M, N).to('cuda')
                 model.load_state_dict(torch.load('./TrainedModels/%s/M%d_N%d_R%d.pth' % (model_name, M, N, RD_point),
-                                             map_location=torch.device('cuda')), strict=True) # 구글 기학습 모델을 사용
+                                             map_location=torch.device('cuda')), strict=True) 
                 model.entropy_bottleneck.update()
                 model.gaussian_conditional.update_scale_table(scale_table)
                 model.eval()
