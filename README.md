@@ -63,6 +63,7 @@ The linked ply files for each scene are 3D meshes created through TSDF fusion.
 A detailed description of the compression pipeline can be found at the following link.
 [(compression pipeline)](https://github.com/moolgom/3DLCSEncoder/blob/main/PIPELINE.md)
 
+<!--
 # Our TSDF Volume Encoder Performance (with Single Res. TSDF Volume)
 
 Below are comparisons of the compression results using 3D models from the Stanford 3D Scanning Repository (http://graphics.stanford.edu/data/3Dscanrep/) with Google Draco (https://github.com/google/draco) and our TSDF volume encoder.
@@ -184,6 +185,7 @@ The results below show the data size and distortion compared to the original geo
 7636 KB (PLY size), 0.046593 RMS (Hausdorff dist.) 
 
 To Be Updated.
+-->
 
 
 
