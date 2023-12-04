@@ -20,6 +20,8 @@ python 3.8+, numpy 1.24+, trimesh 4.0.0+, matplotlib , scikit-image, scikit-lear
 
 ## Compression of Uniform Resolution TSDF Volumes Using the Stanford3D Dataset
 
+We provide a script for testing the Fully-Factorized Prior, Scale-Hyprerprior, and Proposed HyperLCS models.
+
 The Stanford 3D Dataset can be downloaded from [https://graphics.stanford.edu/data/3Dscanrep/](https://graphics.stanford.edu/data/3Dscanrep/).
 
 ```
@@ -28,7 +30,7 @@ python Test_Stanford3D.py --input_mesh Armadillo --voxel_size 0.4 --rate_points 
 
 # Training
 
-We provide a script for training the HyperLCS model using only sample training data, due to the size limitations of GitHub repositories.
+We provide a script for training the HyperLCS model using only sample training dataset, due to the size limitations of GitHub repositories.
 
 ```
 python Train_HyperLCS.py
