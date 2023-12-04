@@ -1,6 +1,7 @@
 import os
 import time
 import zlib
+import configargparse
 import numpy as np
 from skimage import measure
 
@@ -361,23 +362,50 @@ def Test_HyperLCS(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origi
     _ = mesh_out.export('%s_HyperLCS_%d.ply' % (input_mesh, rate_point))
 
 
-
-###############################################################################
-def main():
-    input_mesh = 'Armadillo' 
-    voxel_size = 0.8 
-    rate_point = 4
+###############################################################################   
+###############################################################################   
+###############################################################################   
+p = configargparse.ArgumentParser()
+p.add_argument('--input_mesh', type=str, default='Armadillo', help='The names of mesh models in the "Stanford3D" directory ')
+p.add_argument('--voxel_size', type=float, default=0.4, help='Physical voxel size (resolution) of the TSDF volume')
+p.add_argument('--rate_points', type=str, default='0,3,6,9', help='Compression target rate point list between 0 and 9')
+opt = p.parse_args()
     
-    # Converting a mesh PLY file to a TSDF volume
+
+def main():
+    input_mesh = opt.input_mesh
+    voxel_size = opt.voxel_size
+    rate_points = opt.rate_points
+    rate_points = [int(x) for x in rate_points.split(',')]
+    
+    
+    ''' Converting a mesh PLY file to a TSDF volume '''
     tsdf_volume, volume_origin, volume_dim = mesh_to_TSDFVolume('./Stanford3D/%s.ply' % input_mesh, voxel_size)
     _, _, _, mask_cube = create_topology_mask(tsdf_volume)
     mask_volume = mask_cube.astype(bool)
     
-    # Compression of the same TSDF volume using three different models
-    Test_Factorizerd(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size)
-    Test_Hyperprior(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size)
-    Test_HyperLCS(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size) # The proposed model
+    
+    ''' Mesh extracted from the original TSDF volume '''
+    verts_out, faces_out, normals_out, values_out = measure.marching_cubes(tsdf_volume, 0, mask=mask_volume)
+    #verts_out, faces_out, normals_out, values_out = measure.marching_cubes(tsdf_volume_out, 0)
+    verts_out = verts_out * voxel_size + volume_origin
+    faces_out = np.flip(faces_out, axis=1)
+    mesh_out = trimesh.Trimesh(vertices=verts_out, faces=faces_out, vertex_normals=normals_out)
+    _ = mesh_out.export('%s_uncompressed.ply' % (input_mesh))
+    
+    
+    ''' Compression of the same TSDF volume using three different models '''
+    for rate_point in rate_points:
+        Test_Factorizerd(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size)
+        
+    for rate_point in rate_points:
+        Test_Hyperprior(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size)
+       
+    # Our proposed compression model
+    for rate_point in rate_points:
+        Test_HyperLCS(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size) 
 
 
 if __name__ == "__main__":
 	main()
+    
