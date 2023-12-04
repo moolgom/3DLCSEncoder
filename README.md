@@ -16,6 +16,16 @@ Overall, the combination of these contributions produces a synergistic effect. I
 
 python 3.8+, numpy 1.24+, trimesh 4.0.0+, matplotlib , scikit-image, scikit-learn, pytorch 1.13+, compressai
 
+# Testing
+
+The Stanford 3D Dataset can be downloaded from [https://graphics.stanford.edu/data/3Dscanrep/](https://graphics.stanford.edu/data/3Dscanrep/).
+
+```
+python Test_Stanford3D.py --input_mesh Armadillo --voxel_size 0.4 --rate_points 0,3,6,9
+```
+
+## Compression of Uniform Resolution TSDF Volumes Using the Stanford3D Dataset
+
 # Our Evaluation Datasets
 
 Our evaluation dataset consists of 4K RGB-D images acquired using a 21 x 21 frontal-facing camera array in virtual indoor scenes. 
