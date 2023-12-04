@@ -10,6 +10,26 @@ from torchac import torchac
 from Models import *
 from Utils import *
 
+if  torch.cuda.device_count() > 1:
+    from pynvml import *
+    # GPU auto allocation
+    best_gpu = 0
+    most_free_memory = 0
+    nvmlInit()
+    
+    for gpu_index in range(3):
+        h = nvmlDeviceGetHandleByIndex(gpu_index)
+        info = nvmlDeviceGetMemoryInfo(h)
+        free_memory = info.free
+        if most_free_memory < free_memory:
+            most_free_memory = free_memory
+            best_gpu = gpu_index
+            
+    print('Best GPU: ', best_gpu)
+    torch.cuda.set_device(best_gpu)
+    torch.cuda.empty_cache() # Empty any cache, not sure this helps, we try waht we can 
+    
+
 ###############################################################################
 def Test_Factorizerd(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size, batch_size=512):
     model = FactorizedPriorModel(192).to('cuda')
@@ -356,7 +376,7 @@ def main():
     # Compression of the same TSDF volume using three different models
     Test_Factorizerd(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size)
     Test_Hyperprior(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size)
-    Test_HyperLCS(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size)
+    Test_HyperLCS(input_mesh, rate_point, tsdf_volume, mask_volume, volume_origin, voxel_size) # The proposed model
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ from numba import njit
 
 
 def mesh_to_TSDFVolume(mesh_path, voxel_size):
-    print("Converting meth to TSDF volume...", end='')
+    print("Converting mesh to TSDF volume...", end='')
     mesh = trimesh.load(mesh_path)
     faces = np.array(mesh.faces)
     verts = np.array(mesh.vertices)
