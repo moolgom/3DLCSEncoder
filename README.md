@@ -28,7 +28,9 @@ python Test_Stanford3D.py --input_mesh Armadillo --voxel_size 0.4 --rate_points 
 
 # Training
 
-To Be Updated.
+```
+python Train_HyperLCS.py
+```
 
 # Our Evaluation Datasets
 
