@@ -28,6 +28,8 @@ python Test_Stanford3D.py --input_mesh Armadillo --voxel_size 0.4 --rate_points 
 
 # Training
 
+We provide a script for training the HyperLCS model using only sample training data, due to the size limitations of GitHub repositories.
+
 ```
 python Train_HyperLCS.py
 ```
