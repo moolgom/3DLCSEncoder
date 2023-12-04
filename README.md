@@ -16,6 +16,24 @@ Overall, the combination of these contributions produces a synergistic effect. I
 
 python 3.8+, numpy 1.24+, trimesh 4.0.0+, matplotlib , scikit-image, scikit-learn, pytorch 1.13+, compressai
 
+# Testing
+
+## Compression of Uniform Resolution TSDF Volumes Using the Stanford3D Dataset
+
+The Stanford 3D Dataset can be downloaded from [https://graphics.stanford.edu/data/3Dscanrep/](https://graphics.stanford.edu/data/3Dscanrep/).
+
+```
+python Test_Stanford3D.py --input_mesh Armadillo --voxel_size 0.4 --rate_points 0,3,6,9
+```
+
+# Training
+
+We provide a script for training the HyperLCS model using only sample training data, due to the size limitations of GitHub repositories.
+
+```
+python Train_HyperLCS.py
+```
+
 # Our Evaluation Datasets
 
 Our evaluation dataset consists of 4K RGB-D images acquired using a 21 x 21 frontal-facing camera array in virtual indoor scenes. 
@@ -63,6 +81,7 @@ The linked ply files for each scene are 3D meshes created through TSDF fusion.
 A detailed description of the compression pipeline can be found at the following link.
 [(compression pipeline)](https://github.com/moolgom/3DLCSEncoder/blob/main/PIPELINE.md)
 
+<!--
 # Our TSDF Volume Encoder Performance (with Single Res. TSDF Volume)
 
 Below are comparisons of the compression results using 3D models from the Stanford 3D Scanning Repository (http://graphics.stanford.edu/data/3Dscanrep/) with Google Draco (https://github.com/google/draco) and our TSDF volume encoder.
@@ -184,6 +203,7 @@ The results below show the data size and distortion compared to the original geo
 7636 KB (PLY size), 0.046593 RMS (Hausdorff dist.) 
 
 To Be Updated.
+-->
 
 
 
