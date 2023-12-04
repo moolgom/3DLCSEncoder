@@ -14,9 +14,7 @@ Overall, the combination of these contributions produces a synergistic effect. I
 
 # Requirements
 
-(TODO: List the required versions.)
-
-numpy, trimesh, matplotlib, scikit-image, scikit-learn, pytorch, compressai
+python 3.8+, numpy 1.24+, trimesh 4.0.0+, matplotlib , scikit-image, scikit-learn, pytorch 1.13+, compressai
 
 # Our Evaluation Datasets
 
