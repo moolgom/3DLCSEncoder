@@ -18,13 +18,17 @@ python 3.8+, numpy 1.24+, trimesh 4.0.0+, matplotlib , scikit-image, scikit-lear
 
 # Testing
 
+## Compression of Uniform Resolution TSDF Volumes Using the Stanford3D Dataset
+
 The Stanford 3D Dataset can be downloaded from [https://graphics.stanford.edu/data/3Dscanrep/](https://graphics.stanford.edu/data/3Dscanrep/).
 
 ```
 python Test_Stanford3D.py --input_mesh Armadillo --voxel_size 0.4 --rate_points 0,3,6,9
 ```
 
-## Compression of Uniform Resolution TSDF Volumes Using the Stanford3D Dataset
+# Training
+
+To Be Updated.
 
 # Our Evaluation Datasets
 
