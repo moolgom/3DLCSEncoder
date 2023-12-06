@@ -279,7 +279,7 @@ def point_to_face_distance(pts_pt, mesh_pt, min_triangle_area=5e-3):
     
 
 
-def symmetric_face_to_point_distance(verts1_np, tris1_np, verts2_np, tris2_np, voxel_size=None):
+def symmetric_face_to_point_distance(verts1_np, tris1_np, verts2_np, tris2_np):
     pts1_pt = Pointclouds(points=[torch.from_numpy(verts1_np)])
     pts2_pt = Pointclouds(points=[torch.from_numpy(verts2_np)])
     mesh1_pt = Meshes(verts=[torch.from_numpy(verts1_np)], 
@@ -295,18 +295,13 @@ def symmetric_face_to_point_distance(verts1_np, tris1_np, verts2_np, tris2_np, v
     dist1 = face_to_point_distance(pts1_pt, mesh2_pt)
     dist2 = face_to_point_distance(pts2_pt, mesh1_pt)
     
-    if voxel_size:
-        final_dist1 = dist1[dist1 < voxel_size].mean()
-        final_dist2 = dist2[dist2 < voxel_size].mean()
-    else:
-        final_dist1 = dist1.mean()
-        final_dist2 = dist2.mean()
-        
-
+    final_dist1 = dist1.mean()
+    final_dist2 = dist2.mean()
+    
     return final_dist1, final_dist2
 
 
-def symmetric_point_to_face_distance(verts1_np, tris1_np, verts2_np, tris2_np, outlier=-1.0):
+def symmetric_point_to_face_distance(verts1_np, tris1_np, verts2_np, tris2_np):
     pts1_pt = Pointclouds(points=[torch.from_numpy(verts1_np)])
     pts2_pt = Pointclouds(points=[torch.from_numpy(verts2_np)])
     mesh1_pt = Meshes(verts=[torch.from_numpy(verts1_np)], 
@@ -322,19 +317,7 @@ def symmetric_point_to_face_distance(verts1_np, tris1_np, verts2_np, tris2_np, o
     dist1 = point_to_face_distance(pts1_pt, mesh2_pt)
     dist2 = point_to_face_distance(pts2_pt, mesh1_pt)
     
-    #print(dist1.max())
-    #print(dist2.max())
+    final_dist1 = dist1.mean()
+    final_dist2 = dist2.mean()
     
-    if outlier > 0.0:
-        N1 = dist1.shape[0]
-        N2 = dist2.shape[0]
-        dist1 = dist1.sort()[0][0:int(N1 * outlier)]
-        dist2 = dist2.sort()[0][0:int(N2 * outlier)]
-        final_dist1 = dist1.mean()
-        final_dist2 = dist2.mean()
-    else:
-        final_dist1 = dist1.mean()
-        final_dist2 = dist2.mean()
-        
-
     return final_dist1, final_dist2
